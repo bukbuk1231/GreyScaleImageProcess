@@ -11,10 +11,24 @@ public class HistogramEqualization {
     }
 
     public int[][] globalEqualization() {
-        return globalEqualization(image);
+        return equalization(image);
     }
 
-    public int[][] globalEqualization(int[][] image) {
+    public int[][] localEqualization(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] res = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                int[][] equalizedMask = equalization(maskRegion);
+                res[i][j] = equalizedMask[maskSize / 2][maskSize / 2];
+            }
+        }
+        return res;
+    }
+
+    public int[][] equalization(int[][] image) {
         int h = image.length, w = image[0].length;
         int[][] res = new int[h][w];
 

@@ -214,7 +214,13 @@ public class CS555 {
         btnLocalHe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-
+                maskSize = Integer.valueOf(textFieldMask.getText());
+                HistogramEqualization histogramEqualization = new HistogramEqualization();
+                histogramEqualization.setPath(originalImagePath);
+                int[][] newImg = histogramEqualization.localEqualization(maskSize);
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_local_equalized.jpg");
+                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_local_equalized.jpg"));
+                processedLabel.setIcon(icon);
             }
         });
         btnLocalHe.setBackground(Color.GREEN);
@@ -228,8 +234,8 @@ public class CS555 {
                 HistogramEqualization histogramEqualization = new HistogramEqualization();
                 histogramEqualization.setPath(originalImagePath);
                 int[][] newImg = histogramEqualization.globalEqualization();
-                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_equalized.jpg");
-                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_equalized.jpg"));
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_global_equalized.jpg");
+                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_global_equalized.jpg"));
                 processedLabel.setIcon(icon);
             }
         });
