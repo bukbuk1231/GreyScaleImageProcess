@@ -1,6 +1,7 @@
 package gui;
 
 import processor.GreyScaleUtil;
+import processor.HistogramEqualization;
 import processor.ImageScaling;
 import processor.ImageScalingAlgorithm;
 
@@ -108,7 +109,7 @@ public class CS555 {
                     File selectedFile = file.getSelectedFile();
                     String path = selectedFile.getAbsolutePath();
                     originalImagePath = path;
-                    generatePath = path.substring(0, path.length() - 4) + "_processed.jpg";
+                    generatePath = path.substring(0, path.length() - 4);
                     originalLabel.setIcon(new ImageIcon(path));
                 } else if (result == JFileChooser.CANCEL_OPTION) {
                     System.out.println("No Image Choosen");
@@ -185,8 +186,8 @@ public class CS555 {
 
                 processor.setPath(originalImagePath);
                 int[][] newImg = processor.scaleImage(w, h, alg, bit);
-                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath);
-                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath));
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_scaled.jpg");
+                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_scaled.jpg"));
                 processedLabel.setIcon(icon);
 
                 System.out.println("File: " + originalImagePath);
@@ -224,7 +225,12 @@ public class CS555 {
         btnGlobalHe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                HistogramEqualization histogramEqualization = new HistogramEqualization();
+                histogramEqualization.setPath(originalImagePath);
+                int[][] newImg = histogramEqualization.globalEqualization();
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_equalized.jpg");
+                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_equalized.jpg"));
+                processedLabel.setIcon(icon);
             }
         });
         btnGlobalHe.setBackground(Color.GREEN);
@@ -235,9 +241,13 @@ public class CS555 {
         lblFilter.setBounds(57, 369, 46, 14);
         optionsPanel.add(lblFilter);
 
-        JComboBox comboBox = new JComboBox();
-        comboBox.setBounds(98, 369, 144, 33);
-        optionsPanel.add(comboBox);
+        JComboBox filterBox = new JComboBox();
+        filterBox.setBounds(98, 369, 144, 33);
+        filterBox.addItem("Smoothing");
+        filterBox.addItem("Median");
+        filterBox.addItem("Sharpening Laplacian");
+        filterBox.addItem("High-boosting");
+        optionsPanel.add(filterBox);
 
         JButton btnSpatialFiltering = new JButton("Spatial Filtering");
         btnSpatialFiltering.addActionListener(new ActionListener() {

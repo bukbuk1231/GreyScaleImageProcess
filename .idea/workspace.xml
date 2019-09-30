@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee5ea85e-b900-4ea7-9f17-64f5261e7a9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/processor/HistogramEqualization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/CS555.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CS555.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/ImageProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/ImageScaling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/ImageProcessingAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/ImageScalingAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/ImageScaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/ImageScaling.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,35 +33,48 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="212" column="59" lean-forward="true" selection-start-line="212" selection-start-column="59" selection-end-line="212" selection-end-column="59" />
+            <state relative-caret-position="361">
+              <caret line="240" column="45" lean-forward="true" selection-start-line="240" selection-start-column="45" selection-end-line="240" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="method#setPath#0;class#ImageScaling#0" />
+                <element signature="method#scaleImage#0;class#ImageScaling#0" />
+                <element signature="e#470#880#0" />
+                <element signature="e#960#1106#1" />
+                <element signature="e#1003#1096#1" />
+                <element signature="method#linearX#0;class#ImageScaling#0" />
+                <element signature="e#1408#1708#1" />
+                <element signature="e#1451#1698#1" />
+                <element signature="method#linearY#0;class#ImageScaling#0" />
+                <element signature="e#2010#2310#1" />
+                <element signature="e#2053#2300#1" />
+                <element signature="method#bilinear#0;class#ImageScaling#0" />
+                <element signature="e#2660#3170#1" />
+                <element signature="e#2703#3160#1" />
+                <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
+                <element signature="e#3475#3657#1" />
+                <element signature="e#3518#3647#1" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
+        <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="211">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
               <folding>
-                <element signature="method#setPath#0;class#ImageProcess#0" />
-                <element signature="method#scaleImage#0;class#ImageScaling#0" />
-                <element signature="e#475#885#0" />
-                <element signature="e#965#1111#1" />
-                <element signature="e#1008#1101#1" />
-                <element signature="method#linearX#0;class#ImageProcess#0" />
-                <element signature="e#1413#1713#1" />
-                <element signature="e#1456#1703#1" />
-                <element signature="method#linearY#0;class#ImageProcess#0" />
-                <element signature="e#2015#2315#1" />
-                <element signature="e#2058#2305#1" />
-                <element signature="method#bilinear#0;class#ImageProcess#0" />
-                <element signature="e#2665#3175#1" />
-                <element signature="e#2708#3165#1" />
-                <element signature="method#nearestNeighbor#0;class#ImageProcess#0" />
-                <element signature="e#3480#3662#1" />
-                <element signature="e#3523#3652#1" />
+                <element signature="e#300#301#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,8 +83,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -102,14 +114,16 @@
         <option value="$PROJECT_DIR$/src/processor/Main.java" />
         <option value="$PROJECT_DIR$/src/processor/ImageProcessingAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/gui/CS555Assignment1.java" />
-        <option value="$PROJECT_DIR$/src/gui/CS555.java" />
         <option value="$PROJECT_DIR$/src/processor/ImageProcess.java" />
+        <option value="$PROJECT_DIR$/src/processor/ImageProcessing.java" />
         <option value="$PROJECT_DIR$/src/processor/ImageScaling.java" />
+        <option value="$PROJECT_DIR$/src/processor/HistogramEqualization.java" />
+        <option value="$PROJECT_DIR$/src/gui/CS555.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="424" />
+    <option name="x" value="401" />
     <option name="y" value="172" />
     <option name="width" value="1723" />
     <option name="height" value="1036" />
@@ -173,7 +187,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569880514081" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569884139592" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -246,18 +260,18 @@
       <workItem from="1568171352841" duration="45000" />
       <workItem from="1568173028112" duration="562000" />
       <workItem from="1568238712661" duration="11000" />
-      <workItem from="1569873263010" duration="2515000" />
+      <workItem from="1569873263010" duration="5438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26989000" />
+    <option name="totallyTimeSpent" value="29912000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="424" y="172" width="1723" height="1036" extended-state="0" />
+    <frame x="401" y="172" width="1723" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19736053" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19736053" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -266,7 +280,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295063" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30319735" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30319735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -341,42 +355,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/processor/ImageProcessing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        <state relative-caret-position="304">
+          <caret line="19" column="60" lean-forward="true" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
+    <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="212" column="59" lean-forward="true" selection-start-line="212" selection-start-column="59" selection-end-line="212" selection-end-column="59" />
+        <state relative-caret-position="272">
+          <caret line="23" column="59" selection-start-line="23" selection-start-column="59" selection-end-line="23" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="160">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="method#setPath#0;class#ImageProcess#0" />
+            <element signature="method#setPath#0;class#ImageScaling#0" />
             <element signature="method#scaleImage#0;class#ImageScaling#0" />
-            <element signature="e#475#885#0" />
-            <element signature="e#965#1111#1" />
-            <element signature="e#1008#1101#1" />
-            <element signature="method#linearX#0;class#ImageProcess#0" />
-            <element signature="e#1413#1713#1" />
-            <element signature="e#1456#1703#1" />
-            <element signature="method#linearY#0;class#ImageProcess#0" />
-            <element signature="e#2015#2315#1" />
-            <element signature="e#2058#2305#1" />
-            <element signature="method#bilinear#0;class#ImageProcess#0" />
-            <element signature="e#2665#3175#1" />
-            <element signature="e#2708#3165#1" />
-            <element signature="method#nearestNeighbor#0;class#ImageProcess#0" />
-            <element signature="e#3480#3662#1" />
-            <element signature="e#3523#3652#1" />
+            <element signature="e#470#880#0" />
+            <element signature="e#960#1106#1" />
+            <element signature="e#1003#1096#1" />
+            <element signature="method#linearX#0;class#ImageScaling#0" />
+            <element signature="e#1408#1708#1" />
+            <element signature="e#1451#1698#1" />
+            <element signature="method#linearY#0;class#ImageScaling#0" />
+            <element signature="e#2010#2310#1" />
+            <element signature="e#2053#2300#1" />
+            <element signature="method#bilinear#0;class#ImageScaling#0" />
+            <element signature="e#2660#3170#1" />
+            <element signature="e#2703#3160#1" />
+            <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
+            <element signature="e#3475#3657#1" />
+            <element signature="e#3518#3647#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="240" column="45" lean-forward="true" selection-start-line="240" selection-start-column="45" selection-end-line="240" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
           </folding>
         </state>
       </provider>

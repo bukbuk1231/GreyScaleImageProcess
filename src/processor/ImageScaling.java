@@ -15,7 +15,7 @@ public class ImageScaling {
     }
 
     public int[][] scaleImage(int w2, int h2, ImageScalingAlgorithm method, int bitSize) {
-        int[][] newImg = new int[w2][h2];
+        int[][] newImg = new int[h2][w2];
         switch (method) {
             case NEAREST_NEIGHBOR:
                 newImg = nearestNeighbor(w2, h2);
