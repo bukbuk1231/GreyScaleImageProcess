@@ -6,7 +6,6 @@ import processor.ImageProcessingAlgorithm;
 
 import java.awt.EventQueue;
 
-import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -24,17 +23,16 @@ import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.Color;
-import java.net.URL;
 
-public class CS555Assignment1 {
+public class CS555 {
     private JFrame frame;
     private String originalImagePath, generatePath;
-    private JTextField textFieldX, textFieldY;
+    private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask;
     private int w, h;
+    private int maskSize, HBCoeff;
     private String algorithm;
     private int bit;
     private ImageProcess processor;
-
     /**
      * Launch the application.
      */
@@ -42,7 +40,7 @@ public class CS555Assignment1 {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    CS555Assignment1 window = new CS555Assignment1();
+                    CS555 window = new CS555();
                     window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -54,9 +52,11 @@ public class CS555Assignment1 {
     /**
      * Create the application.
      */
-    public CS555Assignment1() {
+    public CS555() {
         originalImagePath = generatePath = null;
         w = h = 512;
+        HBCoeff = 3;
+        maskSize = 3;
         algorithm = "Nearest Neigbor";
         bit = 0;
         processor = new ImageProcess();
@@ -68,7 +68,7 @@ public class CS555Assignment1 {
      */
     private void initialize() {
         frame = new JFrame();
-        frame.setBounds(100, 100, 1447, 545);
+        frame.setBounds(100, 100, 1447, 618);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
@@ -92,7 +92,7 @@ public class CS555Assignment1 {
         processedPanel.add(processedLabel);
 
         JPanel optionsPanel = new JPanel();
-        optionsPanel.setBounds(1024, 0, 406, 512);
+        optionsPanel.setBounds(1024, 0, 406, 579);
         frame.getContentPane().add(optionsPanel);
 
         JButton selectImgButton = new JButton("Choose a image");
@@ -120,13 +120,13 @@ public class CS555Assignment1 {
 
         textFieldX = new JTextField();
         textFieldX.setText("512");
-        textFieldX.setBounds(143, 115, 130, 42);
+        textFieldX.setBounds(143, 115, 64, 33);
         optionsPanel.add(textFieldX);
         textFieldX.setColumns(10);
 
         textFieldY = new JTextField();
         textFieldY.setText("512");
-        textFieldY.setBounds(143, 150, 130, 42);
+        textFieldY.setBounds(225, 115, 64, 33);
         optionsPanel.add(textFieldY);
         textFieldY.setColumns(10);
 
@@ -135,18 +135,18 @@ public class CS555Assignment1 {
         optionsPanel.add(lblResolution);
 
         JComboBox bitBox = new JComboBox();
-        bitBox.setBounds(143, 191, 144, 42);
+        bitBox.setBounds(143, 159, 144, 28);
         for (int i = 8; i >= 1; i--) {
             bitBox.addItem("" + i);
         }
         optionsPanel.add(bitBox);
 
         JLabel lblNewLabel = new JLabel("Bit");
-        lblNewLabel.setBounds(57, 198, 64, 28);
+        lblNewLabel.setBounds(57, 161, 64, 19);
         optionsPanel.add(lblNewLabel);
 
         JComboBox algBox = new JComboBox();
-        algBox.setBounds(143, 283, 144, 42);
+        algBox.setBounds(143, 198, 144, 33);
         algBox.addItem("Nearest Neighbor");
         algBox.addItem("Linear X");
         algBox.addItem("Linear Y");
@@ -154,10 +154,10 @@ public class CS555Assignment1 {
         optionsPanel.add(algBox);
 
         JLabel lblNewLabel_1 = new JLabel("Algorithm");
-        lblNewLabel_1.setBounds(57, 297, 46, 14);
+        lblNewLabel_1.setBounds(57, 207, 46, 14);
         optionsPanel.add(lblNewLabel_1);
 
-        JButton btnNewButton = new JButton("GO");
+        JButton btnNewButton = new JButton("Scale");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 // Feed to processor and do some algorithm
@@ -196,7 +196,68 @@ public class CS555Assignment1 {
             }
         });
         btnNewButton.setBackground(Color.GREEN);
-        btnNewButton.setBounds(143, 381, 144, 42);
+        btnNewButton.setBounds(143, 242, 144, 33);
         optionsPanel.add(btnNewButton);
+
+        JLabel lblMask = new JLabel("Mask (n * n)");
+        lblMask.setBounds(57, 286, 64, 14);
+        optionsPanel.add(lblMask);
+
+        textFieldMask = new JTextField();
+        textFieldMask.setText("3");
+        textFieldMask.setColumns(10);
+        textFieldMask.setBounds(143, 286, 130, 28);
+        optionsPanel.add(textFieldMask);
+
+        JButton btnLocalHe = new JButton("Local HE");
+        btnLocalHe.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+
+            }
+        });
+        btnLocalHe.setBackground(Color.GREEN);
+        btnLocalHe.setBounds(57, 325, 119, 33);
+        optionsPanel.add(btnLocalHe);
+
+        JButton btnGlobalHe = new JButton("Global HE");
+        btnGlobalHe.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        btnGlobalHe.setBackground(Color.GREEN);
+        btnGlobalHe.setBounds(225, 325, 125, 33);
+        optionsPanel.add(btnGlobalHe);
+
+        JLabel lblFilter = new JLabel("Filter");
+        lblFilter.setBounds(57, 369, 46, 14);
+        optionsPanel.add(lblFilter);
+
+        JComboBox comboBox = new JComboBox();
+        comboBox.setBounds(98, 369, 144, 33);
+        optionsPanel.add(comboBox);
+
+        JButton btnSpatialFiltering = new JButton("Spatial Filtering");
+        btnSpatialFiltering.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        btnSpatialFiltering.setBackground(Color.GREEN);
+        btnSpatialFiltering.setBounds(143, 414, 144, 33);
+        optionsPanel.add(btnSpatialFiltering);
+
+        JLabel lblA = new JLabel("A (HBoost only)");
+        lblA.setBounds(256, 369, 75, 14);
+        optionsPanel.add(lblA);
+
+        textFieldHBCoeff = new JTextField();
+        textFieldHBCoeff.setText("3");
+        textFieldHBCoeff.setColumns(10);
+        textFieldHBCoeff.setBounds(341, 369, 55, 28);
+        optionsPanel.add(textFieldHBCoeff);
     }
 }
