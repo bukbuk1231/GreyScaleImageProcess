@@ -1,8 +1,8 @@
 package gui;
 
 import processor.GreyScaleUtil;
-import processor.ImageProcess;
-import processor.ImageProcessingAlgorithm;
+import processor.ImageScaling;
+import processor.ImageScalingAlgorithm;
 
 import java.awt.EventQueue;
 
@@ -32,7 +32,7 @@ public class CS555 {
     private int maskSize, HBCoeff;
     private String algorithm;
     private int bit;
-    private ImageProcess processor;
+    private ImageScaling processor;
     /**
      * Launch the application.
      */
@@ -59,7 +59,7 @@ public class CS555 {
         maskSize = 3;
         algorithm = "Nearest Neigbor";
         bit = 0;
-        processor = new ImageProcess();
+        processor = new ImageScaling();
         initialize();
     }
 
@@ -167,24 +167,24 @@ public class CS555 {
                 algorithm = (String)algBox.getSelectedItem();
                 bit = Integer.valueOf((String) bitBox.getSelectedItem());
 
-                ImageProcessingAlgorithm alg = null;
+                ImageScalingAlgorithm alg = null;
                 switch (algorithm) {
                     case "Nearest Neighbor":
-                        alg = ImageProcessingAlgorithm.NEAREST_NEIGHBOR;
+                        alg = ImageScalingAlgorithm.NEAREST_NEIGHBOR;
                         break;
                     case "Linear X":
-                        alg = ImageProcessingAlgorithm.LINEAR_X;
+                        alg = ImageScalingAlgorithm.LINEAR_X;
                         break;
                     case "Linear Y":
-                        alg = ImageProcessingAlgorithm.LINEAR_Y;
+                        alg = ImageScalingAlgorithm.LINEAR_Y;
                         break;
                     case "Bilinear":
-                        alg = ImageProcessingAlgorithm.BILINEAR_INTERPOLATION;
+                        alg = ImageScalingAlgorithm.BILINEAR_INTERPOLATION;
                         break;
                 }
 
                 processor.setPath(originalImagePath);
-                int[][] newImg = processor.processImage(w, h, alg, bit);
+                int[][] newImg = processor.scaleImage(w, h, alg, bit);
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath);
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath));
                 processedLabel.setIcon(icon);

@@ -1,11 +1,11 @@
 package processor;
 
-public class ImageProcess {
+public class ImageScaling {
 
     private String path;
     private int[][] image;
 
-    public ImageProcess() {
+    public ImageScaling() {
         path = null;
     }
 
@@ -14,7 +14,7 @@ public class ImageProcess {
         image = GreyScaleUtil.get2DImageArray(GreyScaleUtil.readImage(this.path));
     }
 
-    public int[][] processImage(int w2, int h2, ImageProcessingAlgorithm method, int bitSize) {
+    public int[][] scaleImage(int w2, int h2, ImageScalingAlgorithm method, int bitSize) {
         int[][] newImg = new int[w2][h2];
         switch (method) {
             case NEAREST_NEIGHBOR:

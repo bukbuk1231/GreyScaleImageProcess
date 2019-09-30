@@ -1,5 +1,5 @@
 package processor;
 
-public enum ImageProcessingAlgorithm {
+public enum ImageScalingAlgorithm {
     NEAREST_NEIGHBOR, LINEAR_X, LINEAR_Y, BILINEAR_INTERPOLATION;
 }
