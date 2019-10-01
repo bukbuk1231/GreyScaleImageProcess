@@ -21,6 +21,7 @@ public class HistogramEqualization {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                // GreyScaleUtil.print2DImageArray(maskRegion);
                 int[][] equalizedMask = equalization(maskRegion);
                 res[i][j] = equalizedMask[maskSize / 2][maskSize / 2];
             }

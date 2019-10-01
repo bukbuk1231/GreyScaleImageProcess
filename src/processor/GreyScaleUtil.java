@@ -58,6 +58,7 @@ public class GreyScaleUtil {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public static int[][] createMaskRegion(int[][] image, int i, int j, int maskSize) {
