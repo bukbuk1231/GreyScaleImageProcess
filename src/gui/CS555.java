@@ -1,9 +1,6 @@
 package gui;
 
-import processor.GreyScaleUtil;
-import processor.HistogramEqualization;
-import processor.ImageScaling;
-import processor.ImageScalingAlgorithm;
+import processor.*;
 
 import java.awt.EventQueue;
 
@@ -31,7 +28,7 @@ public class CS555 {
     private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask;
     private int w, h;
     private int maskSize, HBCoeff;
-    private String algorithm;
+    private String algorithm, filter;
     private int bit;
     private ImageScaling processor;
     /**
@@ -59,6 +56,7 @@ public class CS555 {
         HBCoeff = 3;
         maskSize = 3;
         algorithm = "Nearest Neigbor";
+        filter = "Smoothing";
         bit = 0;
         processor = new ImageScaling();
         initialize();
@@ -259,7 +257,24 @@ public class CS555 {
         btnSpatialFiltering.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                filter = (String)filterBox.getSelectedItem();
+                maskSize = Integer.valueOf(textFieldMask.getText());
+                HBCoeff = Integer.valueOf(textFieldHBCoeff.getText());
 
+                int[][] newImg = null;
+                Filtering filtering = new Filtering();
+                filtering.setPath(originalImagePath);
+                switch (filter) {
+                    case "Smoothing":
+                        newImg = filtering.smoothing(maskSize);
+                        break;
+                    case "Median":
+                        newImg = filtering.median(maskSize);
+                        break;
+                }
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg");
+                ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_filtered.jpg"));
+                processedLabel.setIcon(icon);
             }
         });
         btnSpatialFiltering.setBackground(Color.GREEN);

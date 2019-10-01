@@ -45,7 +45,7 @@ public class HistogramEqualization {
             probability[i] = numPixels[i] * 1.0 / totalPixels;
         for (int i = 1; i < 256; i++)
             probability[i] = probability[i - 1] + probability[i];
-        for (int i = 1; i < 256; i++)
+        for (int i = 0; i < 256; i++)
             probability[i] = Math.floor(probability[i] * 256);
 
         for (int i = 0; i < h; i++) {
