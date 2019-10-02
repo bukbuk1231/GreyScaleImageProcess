@@ -340,9 +340,6 @@ public class CS555 {
             GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_bitPlane.jpg");
             ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_bitPlane.jpg"));
             processedLabel.setIcon(icon);
-//            for (int i = 0; i < 8; i++)
-//                System.out.print(plane[i] + " ");
-//            System.out.println();
         }
 
         private int[][] getImageUnderBitPlane() {
@@ -358,7 +355,6 @@ public class CS555 {
                     newImg[i][j] = pixel;
                 }
             }
-            // GreyScaleUtil.print2DImageArray(newImg);
             return newImg;
         }
     }

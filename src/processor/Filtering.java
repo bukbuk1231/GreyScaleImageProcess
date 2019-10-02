@@ -85,6 +85,10 @@ public class Filtering {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 newImg[i][j] = image[i][j] + a * mask[i][j];
+                if (newImg[i][j] > 255)
+                    newImg[i][j] = 255;
+                else if (newImg[i][j] < 0)
+                    newImg[i][j] = 0;
             }
         }
         return newImg;

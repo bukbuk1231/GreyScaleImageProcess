@@ -8,16 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ee5ea85e-b900-4ea7-9f17-64f5261e7a9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/BitPlaneActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BitPlaneActionListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$BitPlaneActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$BitPlaneActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/BitPlane.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/CS555.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CS555.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/BitPlane.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/Filtering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Filtering.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,20 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="259" column="46" lean-forward="true" selection-start-line="259" selection-start-column="46" selection-end-line="259" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processor/BitPlane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="80">
+              <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -92,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+            <state relative-caret-position="448">
+              <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
               <folding>
                 <element signature="method#setPath#0;class#Filtering#0" />
                 <element signature="method#smoothing#0;class#Filtering#0" />
@@ -149,11 +135,11 @@
         <option value="$PROJECT_DIR$/src/processor/Main.java" />
         <option value="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" />
         <option value="$PROJECT_DIR$/src/processor/HistogramEqualization.java" />
-        <option value="$PROJECT_DIR$/src/processor/Filtering.java" />
         <option value="$PROJECT_DIR$/src/gui/JBitPlaneCheckBox.java" />
         <option value="$PROJECT_DIR$/src/processor/BitPlane.java" />
         <option value="$PROJECT_DIR$/src/gui/BitPlaneActionListener.java" />
         <option value="$PROJECT_DIR$/src/gui/CS555.java" />
+        <option value="$PROJECT_DIR$/src/processor/Filtering.java" />
       </list>
     </option>
   </component>
@@ -222,7 +208,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569994025581" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569995223991" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -301,7 +287,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52733000" />
+    <option name="totallyTimeSpent" value="53899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="257" y="125" width="1943" height="1203" extended-state="0" />
@@ -399,30 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
-          <folding>
-            <element signature="method#setPath#0;class#Filtering#0" />
-            <element signature="method#smoothing#0;class#Filtering#0" />
-            <element signature="e#453#876#1" />
-            <element signature="e#495#866#1" />
-            <element signature="e#669#792#1" />
-            <element signature="method#median#0;class#Filtering#0" />
-            <element signature="method#laplacian#0;class#Filtering#0" />
-            <element signature="method#createLaplacianMask#0;class#Filtering#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -449,13 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/BitPlane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/BitPlaneActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -466,10 +421,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/processor/BitPlane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="259" column="46" lean-forward="true" selection-start-line="259" selection-start-column="46" selection-end-line="259" selection-end-column="46" />
+        <state relative-caret-position="80">
+          <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+          <folding>
+            <element signature="method#setPath#0;class#Filtering#0" />
+            <element signature="method#smoothing#0;class#Filtering#0" />
+            <element signature="e#453#876#1" />
+            <element signature="e#495#866#1" />
+            <element signature="e#669#792#1" />
+            <element signature="method#median#0;class#Filtering#0" />
+            <element signature="method#laplacian#0;class#Filtering#0" />
+            <element signature="method#createLaplacianMask#0;class#Filtering#0" />
+          </folding>
         </state>
       </provider>
     </entry>
