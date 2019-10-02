@@ -271,6 +271,10 @@ public class CS555 {
                     case "Median":
                         newImg = filtering.median(maskSize);
                         break;
+                    case "Sharpening Laplacian":
+                        newImg = filtering.laplacian(maskSize);
+                        break;
+
                 }
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_filtered.jpg"));
