@@ -21,6 +21,7 @@ import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.Color;
+import javax.swing.JCheckBox;
 
 public class CS555 {
     private JFrame frame;
@@ -30,7 +31,7 @@ public class CS555 {
     private int maskSize, HBCoeff;
     private String algorithm, filter;
     private int bit;
-    private ImageScaling processor;
+    private ImageScaling scaler;
     /**
      * Launch the application.
      */
@@ -58,7 +59,7 @@ public class CS555 {
         algorithm = "Nearest Neigbor";
         filter = "Smoothing";
         bit = 0;
-        processor = new ImageScaling();
+        scaler = new ImageScaling();
         initialize();
     }
 
@@ -159,7 +160,7 @@ public class CS555 {
         JButton btnNewButton = new JButton("Scale");
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                // Feed to processor and do some algorithm
+                // Feed to scaler and do some algorithm
                 // create util function to resize the image and convert to ImageIcon
                 w = Integer.valueOf(textFieldX.getText());
                 h = Integer.valueOf(textFieldY.getText());
@@ -182,8 +183,8 @@ public class CS555 {
                         break;
                 }
 
-                processor.setPath(originalImagePath);
-                int[][] newImg = processor.scaleImage(w, h, alg, bit);
+                scaler.setPath(originalImagePath);
+                int[][] newImg = scaler.scaleImage(w, h, alg, bit);
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_scaled.jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_scaled.jpg"));
                 processedLabel.setIcon(icon);
@@ -199,13 +200,13 @@ public class CS555 {
         optionsPanel.add(btnNewButton);
 
         JLabel lblMask = new JLabel("Mask (n * n)");
-        lblMask.setBounds(57, 286, 64, 14);
+        lblMask.setBounds(57, 286, 87, 14);
         optionsPanel.add(lblMask);
 
         textFieldMask = new JTextField();
         textFieldMask.setText("3");
         textFieldMask.setColumns(10);
-        textFieldMask.setBounds(143, 286, 130, 28);
+        textFieldMask.setBounds(191, 286, 51, 28);
         optionsPanel.add(textFieldMask);
 
         JButton btnLocalHe = new JButton("Local HE");
@@ -277,7 +278,6 @@ public class CS555 {
                     case "High-boosting":
                         newImg = filtering.highboost(maskSize, HBCoeff);
                         break;
-
                 }
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_filtered.jpg"));
@@ -289,13 +289,58 @@ public class CS555 {
         optionsPanel.add(btnSpatialFiltering);
 
         JLabel lblA = new JLabel("A (HBoost only)");
-        lblA.setBounds(256, 369, 75, 14);
+        lblA.setBounds(256, 369, 94, 14);
         optionsPanel.add(lblA);
 
         textFieldHBCoeff = new JTextField();
         textFieldHBCoeff.setText("3");
         textFieldHBCoeff.setColumns(10);
-        textFieldHBCoeff.setBounds(341, 369, 55, 28);
+        textFieldHBCoeff.setBounds(365, 369, 31, 28);
         optionsPanel.add(textFieldHBCoeff);
+
+        JLabel lblBitPlanes = new JLabel("Bit planes");
+        lblBitPlanes.setBounds(57, 455, 75, 14);
+        optionsPanel.add(lblBitPlanes);
+
+        JCheckBox bit0 = new JCheckBox("0", true);
+        bit0.addActionListener(new BitPlaneActionListener(bit0.getText()));
+        bit0.setBounds(138, 454, 38, 23);
+        optionsPanel.add(bit0);
+
+        JCheckBox bit1 = new JCheckBox("1", true);
+        bit1.addActionListener(new BitPlaneActionListener(bit1.getText()));
+        bit1.setBounds(190, 454, 38, 23);
+        optionsPanel.add(bit1);
+
+        JCheckBox bit2 = new JCheckBox("2", true);
+        bit2.addActionListener(new BitPlaneActionListener(bit2.getText()));
+        bit2.setBounds(243, 454, 38, 23);
+        optionsPanel.add(bit2);
+
+        JCheckBox bit3 = new JCheckBox("3", true);
+        bit3.addActionListener(new BitPlaneActionListener(bit3.getText()));
+        bit3.setBounds(300, 454, 38, 23);
+        optionsPanel.add(bit3);
+
+        JCheckBox bit4 = new JCheckBox("4", true);
+        bit4.addActionListener(new BitPlaneActionListener(bit4.getText()));
+        bit4.setBounds(138, 480, 38, 23);
+        optionsPanel.add(bit4);
+
+        JCheckBox bit5 = new JCheckBox("5", true);
+        bit5.addActionListener(new BitPlaneActionListener(bit5.getText()));
+        bit5.setBounds(190, 480, 38, 23);
+        optionsPanel.add(bit5);
+
+        JCheckBox bit6 = new JCheckBox("6", true);
+        bit6.addActionListener(new BitPlaneActionListener(bit6.getText()));
+        bit6.setBounds(243, 480, 38, 23);
+        optionsPanel.add(bit6);
+
+        JCheckBox bit7 = new JCheckBox("7", true);
+        bit7.addActionListener(new BitPlaneActionListener(bit7.getText()));
+        bit7.setBounds(300, 480, 38, 23);
+        optionsPanel.add(bit7);
+
     }
 }
