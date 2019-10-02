@@ -21,6 +21,7 @@ import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.Color;
+import java.util.Arrays;
 import javax.swing.JCheckBox;
 
 public class CS555 {
@@ -32,6 +33,8 @@ public class CS555 {
     private String algorithm, filter;
     private int bit;
     private ImageScaling scaler;
+    private int[][] image;
+    protected boolean[] plane;
     /**
      * Launch the application.
      */
@@ -60,6 +63,8 @@ public class CS555 {
         filter = "Smoothing";
         bit = 0;
         scaler = new ImageScaling();
+        plane = new boolean[8];
+        Arrays.fill(plane, true);
         initialize();
     }
 
@@ -110,6 +115,9 @@ public class CS555 {
                     originalImagePath = path;
                     generatePath = path.substring(0, path.length() - 4);
                     originalLabel.setIcon(new ImageIcon(path));
+                    image = GreyScaleUtil.get2DImageArray(GreyScaleUtil.readImage(originalImagePath));
+                    h = image.length;
+                    w = image[0].length;
                 } else if (result == JFileChooser.CANCEL_OPTION) {
                     System.out.println("No Image Choosen");
                 }
@@ -185,6 +193,7 @@ public class CS555 {
 
                 scaler.setPath(originalImagePath);
                 int[][] newImg = scaler.scaleImage(w, h, alg, bit);
+                image = newImg;
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_scaled.jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_scaled.jpg"));
                 processedLabel.setIcon(icon);
@@ -233,6 +242,7 @@ public class CS555 {
                 HistogramEqualization histogramEqualization = new HistogramEqualization();
                 histogramEqualization.setPath(originalImagePath);
                 int[][] newImg = histogramEqualization.globalEqualization();
+                image = newImg;
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_global_equalized.jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_global_equalized.jpg"));
                 processedLabel.setIcon(icon);
@@ -279,6 +289,7 @@ public class CS555 {
                         newImg = filtering.highboost(maskSize, HBCoeff);
                         break;
                 }
+                image = newImg;
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_filtered.jpg"));
                 processedLabel.setIcon(icon);
@@ -302,45 +313,53 @@ public class CS555 {
         lblBitPlanes.setBounds(57, 455, 75, 14);
         optionsPanel.add(lblBitPlanes);
 
-        JCheckBox bit0 = new JCheckBox("0", true);
-        bit0.addActionListener(new BitPlaneActionListener(bit0.getText()));
-        bit0.setBounds(138, 454, 38, 23);
-        optionsPanel.add(bit0);
+        final int x = 138, y1 = 454, y2 = 480, dx = 60;
+        for (int i = 0; i < 8; i++) {
+            JCheckBox bitCheckBox = new JCheckBox(String.valueOf(i), true);
+            bitCheckBox.addActionListener(new BitPlaneActionListener(i, processedLabel));
+            if (i >= 4)
+                bitCheckBox.setBounds(x + (i - 4) * dx, y2, 38, 23);
+            else
+                bitCheckBox.setBounds(x + i * dx, y1, 38, 23);
+            optionsPanel.add(bitCheckBox);
+        }
+    }
 
-        JCheckBox bit1 = new JCheckBox("1", true);
-        bit1.addActionListener(new BitPlaneActionListener(bit1.getText()));
-        bit1.setBounds(190, 454, 38, 23);
-        optionsPanel.add(bit1);
+    class BitPlaneActionListener implements ActionListener {
+        private int bit;
+        private JLabel processedLabel;
+        BitPlaneActionListener(int bit, JLabel processedLabel) {
+            this.bit = bit;
+            this.processedLabel = processedLabel;
+        }
 
-        JCheckBox bit2 = new JCheckBox("2", true);
-        bit2.addActionListener(new BitPlaneActionListener(bit2.getText()));
-        bit2.setBounds(243, 454, 38, 23);
-        optionsPanel.add(bit2);
+        @Override
+        public void actionPerformed(ActionEvent arg0) {
+            plane[bit] = !plane[bit];
+            int[][] newImg = getImageUnderBitPlane();
+            GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_bitPlane.jpg");
+            ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_bitPlane.jpg"));
+            processedLabel.setIcon(icon);
+//            for (int i = 0; i < 8; i++)
+//                System.out.print(plane[i] + " ");
+//            System.out.println();
+        }
 
-        JCheckBox bit3 = new JCheckBox("3", true);
-        bit3.addActionListener(new BitPlaneActionListener(bit3.getText()));
-        bit3.setBounds(300, 454, 38, 23);
-        optionsPanel.add(bit3);
-
-        JCheckBox bit4 = new JCheckBox("4", true);
-        bit4.addActionListener(new BitPlaneActionListener(bit4.getText()));
-        bit4.setBounds(138, 480, 38, 23);
-        optionsPanel.add(bit4);
-
-        JCheckBox bit5 = new JCheckBox("5", true);
-        bit5.addActionListener(new BitPlaneActionListener(bit5.getText()));
-        bit5.setBounds(190, 480, 38, 23);
-        optionsPanel.add(bit5);
-
-        JCheckBox bit6 = new JCheckBox("6", true);
-        bit6.addActionListener(new BitPlaneActionListener(bit6.getText()));
-        bit6.setBounds(243, 480, 38, 23);
-        optionsPanel.add(bit6);
-
-        JCheckBox bit7 = new JCheckBox("7", true);
-        bit7.addActionListener(new BitPlaneActionListener(bit7.getText()));
-        bit7.setBounds(300, 480, 38, 23);
-        optionsPanel.add(bit7);
-
+        private int[][] getImageUnderBitPlane() {
+            int[][] newImg = new int[h][w];
+            for (int i = 0; i < h; i++) {
+                for (int j = 0; j < w; j++) {
+                    int pixel = image[i][j];
+                    for (int k = 0; k < 8; k++) {
+                        if (plane[k] == false) {
+                            pixel = pixel & (~(1 << k));
+                        }
+                    }
+                    newImg[i][j] = pixel;
+                }
+            }
+            // GreyScaleUtil.print2DImageArray(newImg);
+            return newImg;
+        }
     }
 }
