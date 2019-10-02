@@ -274,6 +274,9 @@ public class CS555 {
                     case "Sharpening Laplacian":
                         newImg = filtering.laplacian(maskSize);
                         break;
+                    case "High-boosting":
+                        newImg = filtering.highboost(maskSize, HBCoeff);
+                        break;
 
                 }
                 GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg");

@@ -56,7 +56,7 @@ public class Filtering {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
-                GreyScaleUtil.print2DImageArray(maskRegion);
+                // GreyScaleUtil.print2DImageArray(maskRegion);
                 int pixel = 0;
                 for (int m = 0; m < maskSize; m++)
                     for (int n = 0; n < maskSize; n++)
@@ -71,8 +71,23 @@ public class Filtering {
         return newImg;
     }
 
-    public int[][] highboost(int maskSize) {
-        return null;
+    public int[][] highboost(int maskSize, int a) {
+        int h = image.length, w = image[0].length;
+        int[][] blurred = smoothing(maskSize);
+        int[][] mask = new int[h][w];
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                mask[i][j] = image[i][j] - blurred[i][j];
+            }
+        }
+
+        int[][] newImg = new int[h][w];
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                newImg[i][j] = image[i][j] + a * mask[i][j];
+            }
+        }
+        return newImg;
     }
 
     private int[][] createLaplacianMask(int maskSize) {

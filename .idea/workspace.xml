@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee5ea85e-b900-4ea7-9f17-64f5261e7a9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/CS555.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CS555.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processor/Filtering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Filtering.java" afterDir="false" />
     </list>
@@ -22,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/processor/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+            <state relative-caret-position="128">
+              <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -31,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="275" column="30" selection-start-line="275" selection-start-column="30" selection-end-line="275" selection-end-column="30" />
+            <state relative-caret-position="272">
+              <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
             </state>
           </provider>
         </entry>
@@ -40,15 +41,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+            <state relative-caret-position="160">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="method#setPath#0;class#ImageScaling#0" />
                 <element signature="method#scaleImage#0;class#ImageScaling#0" />
+                <element signature="e#470#880#0" />
+                <element signature="e#960#1106#1" />
+                <element signature="e#1003#1096#1" />
                 <element signature="method#linearX#0;class#ImageScaling#0" />
+                <element signature="e#1408#1708#1" />
+                <element signature="e#1451#1698#1" />
                 <element signature="method#linearY#0;class#ImageScaling#0" />
+                <element signature="e#2010#2310#1" />
+                <element signature="e#2053#2300#1" />
                 <element signature="method#bilinear#0;class#ImageScaling#0" />
+                <element signature="e#2660#3170#1" />
+                <element signature="e#2703#3160#1" />
                 <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
+                <element signature="e#3475#3657#1" />
+                <element signature="e#3518#3647#1" />
               </folding>
             </state>
           </provider>
@@ -57,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="16">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -66,14 +78,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+            <state relative-caret-position="330">
+              <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
               <folding>
                 <element signature="method#setPath#0;class#Filtering#0" />
                 <element signature="method#smoothing#0;class#Filtering#0" />
+                <element signature="e#453#876#1" />
+                <element signature="e#495#866#1" />
+                <element signature="e#669#792#1" />
                 <element signature="method#median#0;class#Filtering#0" />
-                <element signature="e#2456#2457#0" expanded="true" />
-                <element signature="e#2482#2483#0" expanded="true" />
+                <element signature="method#laplacian#0;class#Filtering#0" />
+                <element signature="method#createLaplacianMask#0;class#Filtering#0" />
               </folding>
             </state>
           </provider>
@@ -82,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+            <state relative-caret-position="528">
+              <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -122,12 +137,6 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="22" />
     <option name="y" value="23" />
@@ -141,6 +150,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,7 +197,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,12 +281,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44245000" />
+    <option name="totallyTimeSpent" value="45189000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="23" width="1404" height="800" extended-state="0" />
+    <frame x="401" y="172" width="1723" height="1036" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21292217" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19916017" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -286,7 +296,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295063" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3022599" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30209482" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -294,7 +304,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3296582" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32909605" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -344,9 +354,6 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/gui/g.java" />
     <entry file="file://$PROJECT_DIR$/src/gui/g.form" />
@@ -358,59 +365,73 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/ImageProcessing.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="275" column="30" selection-start-line="275" selection-start-column="30" selection-end-line="275" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state relative-caret-position="528">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="method#setPath#0;class#ImageScaling#0" />
-            <element signature="method#scaleImage#0;class#ImageScaling#0" />
-            <element signature="method#linearX#0;class#ImageScaling#0" />
-            <element signature="method#linearY#0;class#ImageScaling#0" />
-            <element signature="method#bilinear#0;class#ImageScaling#0" />
-            <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
-          </folding>
+        <state relative-caret-position="128">
+          <caret line="8" column="63" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="16">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="method#setPath#0;class#ImageScaling#0" />
+            <element signature="method#scaleImage#0;class#ImageScaling#0" />
+            <element signature="e#470#880#0" />
+            <element signature="e#960#1106#1" />
+            <element signature="e#1003#1096#1" />
+            <element signature="method#linearX#0;class#ImageScaling#0" />
+            <element signature="e#1408#1708#1" />
+            <element signature="e#1451#1698#1" />
+            <element signature="method#linearY#0;class#ImageScaling#0" />
+            <element signature="e#2010#2310#1" />
+            <element signature="e#2053#2300#1" />
+            <element signature="method#bilinear#0;class#ImageScaling#0" />
+            <element signature="e#2660#3170#1" />
+            <element signature="e#2703#3160#1" />
+            <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
+            <element signature="e#3475#3657#1" />
+            <element signature="e#3518#3647#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="262" lean-forward="true" selection-start-line="262" selection-end-line="262" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+        <state relative-caret-position="330">
+          <caret line="79" column="46" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
           <folding>
             <element signature="method#setPath#0;class#Filtering#0" />
             <element signature="method#smoothing#0;class#Filtering#0" />
+            <element signature="e#453#876#1" />
+            <element signature="e#495#866#1" />
+            <element signature="e#669#792#1" />
             <element signature="method#median#0;class#Filtering#0" />
-            <element signature="e#2456#2457#0" expanded="true" />
-            <element signature="e#2482#2483#0" expanded="true" />
+            <element signature="method#laplacian#0;class#Filtering#0" />
+            <element signature="method#createLaplacianMask#0;class#Filtering#0" />
           </folding>
         </state>
       </provider>
