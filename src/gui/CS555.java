@@ -299,7 +299,7 @@ public class CS555 {
         btnSpatialFiltering.setBounds(143, 414, 144, 33);
         optionsPanel.add(btnSpatialFiltering);
 
-        JLabel lblA = new JLabel("A (HBoost only)");
+        JLabel lblA = new JLabel("A (HBoost)");
         lblA.setBounds(256, 369, 94, 14);
         optionsPanel.add(lblA);
 
