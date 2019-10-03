@@ -318,9 +318,9 @@ public class CS555 {
             JCheckBox bitCheckBox = new JCheckBox(String.valueOf(i), true);
             bitCheckBox.addActionListener(new BitPlaneActionListener(i, processedLabel));
             if (i >= 4)
-                bitCheckBox.setBounds(x + (i - 4) * dx, y2, 38, 23);
+                bitCheckBox.setBounds(x + (i - 4) * dx, y2, 43, 23);
             else
-                bitCheckBox.setBounds(x + i * dx, y1, 38, 23);
+                bitCheckBox.setBounds(x + i * dx, y1, 43, 23);
             optionsPanel.add(bitCheckBox);
         }
     }
