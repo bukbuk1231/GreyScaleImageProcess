@@ -29,7 +29,8 @@ public class CS555 {
     private String originalImagePath, generatePath;
     private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask;
     private int w, h;
-    private int maskSize, HBCoeff;
+    private int maskSize;
+    private double HBCoeff;
     private String algorithm, filter;
     private int bit;
     private ImageScaling scaler;
@@ -57,7 +58,7 @@ public class CS555 {
     public CS555() {
         originalImagePath = generatePath = null;
         w = h = 512;
-        HBCoeff = 3;
+        HBCoeff = 3.0;
         maskSize = 3;
         algorithm = "Nearest Neigbor";
         filter = "Smoothing";
@@ -270,7 +271,7 @@ public class CS555 {
             public void actionPerformed(ActionEvent e) {
                 filter = (String)filterBox.getSelectedItem();
                 maskSize = Integer.valueOf(textFieldMask.getText());
-                HBCoeff = Integer.valueOf(textFieldHBCoeff.getText());
+                HBCoeff = Double.valueOf(textFieldHBCoeff.getText());
 
                 int[][] newImg = null;
                 Filtering filtering = new Filtering();

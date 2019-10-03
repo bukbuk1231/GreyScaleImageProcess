@@ -61,6 +61,7 @@ public class Filtering {
                 for (int m = 0; m < maskSize; m++)
                     for (int n = 0; n < maskSize; n++)
                         pixel = pixel + mask[m][n] * maskRegion[m][n];
+                pixel += image[i][j];
                 if (pixel > 255)
                     pixel = 255;
                 else if (pixel < 0)
@@ -68,10 +69,12 @@ public class Filtering {
                 newImg[i][j] = pixel;
             }
         }
+
+
         return newImg;
     }
 
-    public int[][] highboost(int maskSize, int a) {
+    public int[][] highboost(int maskSize, double a) {
         int h = image.length, w = image[0].length;
         int[][] blurred = smoothing(maskSize);
         int[][] mask = new int[h][w];
@@ -84,7 +87,7 @@ public class Filtering {
         int[][] newImg = new int[h][w];
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
-                newImg[i][j] = image[i][j] + a * mask[i][j];
+                newImg[i][j] = (int)(image[i][j] + a * mask[i][j]);
                 if (newImg[i][j] > 255)
                     newImg[i][j] = 255;
                 else if (newImg[i][j] < 0)
