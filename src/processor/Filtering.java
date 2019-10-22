@@ -105,4 +105,156 @@ public class Filtering {
         mask[maskSize / 2][maskSize / 2] = center;
         return mask;
     }
+
+    private int[][] arithmeticMean(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                int sum = 0;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++)
+                        sum += maskRegion[m][n];
+                }
+                newImg[i][j] = sum / (maskSize * maskSize);
+            }
+        }
+        return newImg;
+    }
+
+    private int[][] geometricMean(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                double prod = 0;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++)
+                        prod *= maskRegion[m][n];
+                }
+                newImg[i][j] = (int)Math.pow(prod, 1.0 / (maskSize * maskSize));
+                if (newImg[i][j] > 255)
+                    newImg[i][j] = 255;
+                else if (newImg[i][j] < 0)
+                    newImg[i][j] = 0;
+            }
+        }
+        return newImg;
+    }  // debug --> change getMask() for padding
+
+    private int[][] harmonicMean(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                double reverseSum = 0;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++)
+                        reverseSum += 1.0 / maskRegion[m][n];
+                }
+                newImg[i][j] = (int)((maskSize * maskSize * 1.0) / reverseSum);
+            }
+        }
+        return newImg;
+    }
+
+    private int[][] contraHarmonicMean(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                double sum = 0, sqrSum = 0;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++) {
+                        sum += maskRegion[m][n];
+                        sqrSum += maskRegion[m][n] * maskRegion[m][n];
+                    }
+                }
+                newImg[i][j] = (int)(sqrSum / sum);
+            }
+        }
+        return newImg;
+    }
+
+    private int[][] max(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                int max = 0;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++)
+                        max = Math.max(max, maskRegion[m][n]);
+                }
+                newImg[i][j] = max;
+            }
+        }
+        return newImg;
+    }
+
+    private int[][] min(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                int min = 256;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++)
+                        min = Math.min(min, maskRegion[m][n]);
+                }
+                newImg[i][j] = min;
+            }
+        }
+        return newImg;
+    }
+
+    private int[][] midpoint(int maskSize) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                int max = 0, min = 256;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++) {
+                        max = Math.max(max, maskRegion[m][n]);
+                        min = Math.min(min, maskRegion[m][n]);
+                    }
+                }
+                newImg[i][j] = (int)((max + min) * 1.0 / 2);
+            }
+        }
+        return newImg;
+    }
+
+    private int[][] alphaTrimmedMean(int maskSize, int d) {
+        int h = image.length, w = image[0].length;
+        int[][] newImg = new int[h][w];
+
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
+                int sum = 0;
+                for (int m = 0; m < maskSize; m++) {
+                    for (int n = 0; n < maskSize; n++)
+                        sum += maskRegion[m][n];
+                }
+                newImg[i][j] = sum / (maskSize * maskSize - d);
+            }
+        }
+        return newImg;
+    }  // add user defined field D
 }

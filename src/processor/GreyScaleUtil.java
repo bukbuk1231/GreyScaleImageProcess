@@ -68,7 +68,7 @@ public class GreyScaleUtil {
         for (int y = 0; y < maskSize; y++) {
             for (int x = 0; x < maskSize; x++) {
                 int deltaY = y - center, deltaX = x - center;
-                int pixel = i + deltaY >= 0 && i + deltaY < h && j + deltaX >= 0 && j + deltaX < w ? image[i + deltaY][j + deltaX] : 0;
+                int pixel = i + deltaY >= 0 && i + deltaY < h && j + deltaX >= 0 && j + deltaX < w ? image[i + deltaY][j + deltaX] : image[i][j];
                 maskRegion[y][x] = pixel;
             }
         }
