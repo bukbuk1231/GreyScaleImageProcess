@@ -97,7 +97,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] createLaplacianMask(int maskSize) {
+    public int[][] createLaplacianMask(int maskSize) {
         int[][] mask = new int[maskSize][maskSize];
         int center = -(maskSize * maskSize - 1);
         for (int i = 0; i < maskSize; i++)
@@ -106,7 +106,7 @@ public class Filtering {
         return mask;
     }
 
-    private int[][] arithmeticMean(int maskSize) {
+    public int[][] arithmeticMean(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -124,7 +124,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] geometricMean(int maskSize) {
+    public int[][] geometricMean(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -146,7 +146,7 @@ public class Filtering {
         return newImg;
     }  // debug --> change getMask() for padding
 
-    private int[][] harmonicMean(int maskSize) {
+    public int[][] harmonicMean(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -164,7 +164,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] contraHarmonicMean(int maskSize) {
+    public int[][] contraHarmonicMean(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -184,7 +184,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] max(int maskSize) {
+    public int[][] max(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -202,7 +202,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] min(int maskSize) {
+    public int[][] min(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -220,7 +220,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] midpoint(int maskSize) {
+    public int[][] midpoint(int maskSize) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -240,7 +240,7 @@ public class Filtering {
         return newImg;
     }
 
-    private int[][] alphaTrimmedMean(int maskSize, int d) {
+    public int[][] alphaTrimmedMean(int maskSize, int d) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 

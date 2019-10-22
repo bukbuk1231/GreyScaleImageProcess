@@ -263,6 +263,14 @@ public class CS555 {
         filterBox.addItem("Median");
         filterBox.addItem("Sharpening Laplacian");
         filterBox.addItem("High-boosting");
+        filterBox.addItem("Arithmetic Mean");
+        filterBox.addItem("Geometric Mean");
+        filterBox.addItem("Harmonic Mean");
+        filterBox.addItem("Contraharmonic Mean");
+        filterBox.addItem("Max");
+        filterBox.addItem("Min");
+        filterBox.addItem("Midpoint");
+        filterBox.addItem("Alpha-trimmed Mean");
         optionsPanel.add(filterBox);
 
         JButton btnSpatialFiltering = new JButton("Spatial Filtering");
@@ -288,6 +296,27 @@ public class CS555 {
                         break;
                     case "High-boosting":
                         newImg = filtering.highboost(maskSize, HBCoeff);
+                        break;
+                    case "Arithmetic Mean":
+                        newImg = filtering.arithmeticMean(maskSize);
+                        break;
+                    case "Geometric Mean":
+                        newImg = filtering.geometricMean(maskSize);
+                        break;
+                    case "Harmonic Mean":
+                        newImg = filtering.harmonicMean(maskSize);
+                        break;
+                    case "Contraharmonic Mean":
+                        newImg = filtering.contraHarmonicMean(maskSize);
+                        break;
+                    case "Max":
+                        newImg = filtering.max(maskSize);
+                        break;
+                    case "Min":
+                        newImg = filtering.min(maskSize);
+                        break;
+                    case "Alpha-trimmed Mean":
+                        newImg = filtering.alphaTrimmedMean(maskSize, 0);
                         break;
                 }
                 image = newImg;

@@ -8,106 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ee5ea85e-b900-4ea7-9f17-64f5261e7a9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$BitPlaneActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$BitPlaneActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Filtering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Filtering.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/CS555.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CS555.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processor/Filtering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Filtering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processor/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3780">
-              <caret line="274" selection-start-line="274" selection-end-line="274" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
-              <folding>
-                <element signature="method#setPath#0;class#ImageScaling#0" />
-                <element signature="method#scaleImage#0;class#ImageScaling#0" />
-                <element signature="method#linearX#0;class#ImageScaling#0" />
-                <element signature="method#linearY#0;class#ImageScaling#0" />
-                <element signature="method#bilinear#0;class#ImageScaling#0" />
-                <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="259" column="1" selection-start-line="259" selection-start-column="1" selection-end-line="259" selection-end-column="1" />
-              <folding>
-                <element signature="method#setPath#0;class#Filtering#0" />
-                <element signature="method#smoothing#0;class#Filtering#0" />
-                <element signature="method#median#0;class#Filtering#0" />
-                <element signature="method#laplacian#0;class#Filtering#0" />
-                <element signature="method#highboost#0;class#Filtering#0" />
-                <element signature="method#createLaplacianMask#0;class#Filtering#0" />
-                <element signature="method#arithmeticMean#0;class#Filtering#0" />
-                <element signature="method#geometricMean#0;class#Filtering#0" />
-                <element signature="method#harmonicMean#0;class#Filtering#0" />
-                <element signature="method#contraHarmonicMean#0;class#Filtering#0" />
-                <element signature="method#max#0;class#Filtering#0" />
-                <element signature="method#min#0;class#Filtering#0" />
-                <element signature="method#midpoint#0;class#Filtering#0" />
-                <element signature="method#alphaTrimmedMean#0;class#Filtering#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="70" column="144" selection-start-line="70" selection-start-column="144" selection-end-line="70" selection-end-column="144" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -120,102 +28,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/GreyScaleUtil.java" />
-        <option value="$PROJECT_DIR$/src/ImageProcessingAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/ImageProcess.java" />
-        <option value="$PROJECT_DIR$/src/gui/Main.java" />
-        <option value="$PROJECT_DIR$/src/processor/ImageProcessingAlgorithm.java" />
-        <option value="$PROJECT_DIR$/src/gui/CS555Assignment1.java" />
-        <option value="$PROJECT_DIR$/src/processor/ImageProcess.java" />
-        <option value="$PROJECT_DIR$/src/processor/ImageProcessing.java" />
-        <option value="$PROJECT_DIR$/src/processor/ImageScaling.java" />
-        <option value="$PROJECT_DIR$/src/processor/Main.java" />
-        <option value="$PROJECT_DIR$/src/processor/HistogramEqualization.java" />
-        <option value="$PROJECT_DIR$/src/gui/JBitPlaneCheckBox.java" />
-        <option value="$PROJECT_DIR$/src/processor/BitPlane.java" />
-        <option value="$PROJECT_DIR$/src/gui/BitPlaneActionListener.java" />
-        <option value="$PROJECT_DIR$/src/gui/CS555.java" />
-        <option value="$PROJECT_DIR$/src/processor/Filtering.java" />
-        <option value="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="24" />
-    <option name="width" value="1348" />
-    <option name="height" value="825" />
-  </component>
+  <component name="ProjectId" id="1SXSGPSRyQPcZcB6Vp7ms4X7tEB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="ImageProcessing_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GreyScaleImageProcess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GreyScaleImageProcess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="processor" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571707934644" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571708235014" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -292,166 +110,25 @@
       <workItem from="1569965472514" duration="8474000" />
       <workItem from="1570072648452" duration="8000" />
       <workItem from="1570074683848" duration="356000" />
-      <workItem from="1571705922996" duration="1907000" />
+      <workItem from="1571705922996" duration="2157000" />
+      <workItem from="1571708356699" duration="34000" />
+      <workItem from="1571708410097" duration="841000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59486000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="75" y="24" width="1348" height="825" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31317" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32855567" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3022599" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3296582" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32867783" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19736053" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3295063" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30319735" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/gui/g.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/g.form" />
-    <entry file="file://$PROJECT_DIR$/src/processor/ImageScalingAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/ImageProcessing.java" />
-    <entry file="file://$PROJECT_DIR$/src/gui/BitPlaneActionListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/processor/BitPlane.java" />
-    <entry file="file://$PROJECT_DIR$/src/processor/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/CS555.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3780">
-          <caret line="274" selection-start-line="274" selection-end-line="274" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/ImageScaling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="method#setPath#0;class#ImageScaling#0" />
-            <element signature="method#scaleImage#0;class#ImageScaling#0" />
-            <element signature="method#linearX#0;class#ImageScaling#0" />
-            <element signature="method#linearY#0;class#ImageScaling#0" />
-            <element signature="method#bilinear#0;class#ImageScaling#0" />
-            <element signature="method#nearestNeighbor#0;class#ImageScaling#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/HistogramEqualization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/Filtering.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="259" column="1" selection-start-line="259" selection-start-column="1" selection-end-line="259" selection-end-column="1" />
-          <folding>
-            <element signature="method#setPath#0;class#Filtering#0" />
-            <element signature="method#smoothing#0;class#Filtering#0" />
-            <element signature="method#median#0;class#Filtering#0" />
-            <element signature="method#laplacian#0;class#Filtering#0" />
-            <element signature="method#highboost#0;class#Filtering#0" />
-            <element signature="method#createLaplacianMask#0;class#Filtering#0" />
-            <element signature="method#arithmeticMean#0;class#Filtering#0" />
-            <element signature="method#geometricMean#0;class#Filtering#0" />
-            <element signature="method#harmonicMean#0;class#Filtering#0" />
-            <element signature="method#contraHarmonicMean#0;class#Filtering#0" />
-            <element signature="method#max#0;class#Filtering#0" />
-            <element signature="method#min#0;class#Filtering#0" />
-            <element signature="method#midpoint#0;class#Filtering#0" />
-            <element signature="method#alphaTrimmedMean#0;class#Filtering#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/processor/GreyScaleUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="70" column="144" selection-start-line="70" selection-start-column="144" selection-end-line="70" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>
