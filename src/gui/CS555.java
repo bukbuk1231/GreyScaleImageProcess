@@ -27,10 +27,10 @@ import javax.swing.JCheckBox;
 public class CS555 {
     private JFrame frame;
     private String originalImagePath, generatePath;
-    private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask;
+    private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask, textFieldAlphaCoeff;
     private int w, h;
     private int maskSize;
-    private double HBCoeff;
+    private double HBCoeff, alphaCoeff;
     private String algorithm, filter;
     private int bit;
     private ImageScaling scaler;
@@ -59,6 +59,7 @@ public class CS555 {
         originalImagePath = generatePath = null;
         w = h = 512;
         HBCoeff = 3.0;
+        alphaCoeff = 10.0;
         maskSize = 3;
         algorithm = "Nearest Neigbor";
         filter = "Smoothing";
@@ -107,7 +108,7 @@ public class CS555 {
             public void actionPerformed(ActionEvent arg0) {
                 JFileChooser file = new JFileChooser();
                 file.setCurrentDirectory(new File(System.getProperty("user.home")));
-                FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "gif", "png");
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Image files", "jpg", "gif", "png", "tif");
                 file.setFileFilter(filter);
                 int result = file.showSaveDialog(null);
                 if (result == JFileChooser.APPROVE_OPTION) {
@@ -115,7 +116,12 @@ public class CS555 {
                     String path = selectedFile.getAbsolutePath();
                     originalImagePath = path;
                     generatePath = path.substring(0, path.length() - 4);
-                    originalLabel.setIcon(new ImageIcon(path));
+                    if (path.substring(path.length() - 3).equals("tif")) {
+                        GreyScaleUtil.writeImage(GreyScaleUtil.readImage(path), generatePath + "_converted_for_displaying.jpg", "jpg");
+                        originalLabel.setIcon(new ImageIcon(generatePath + "_converted_for_displaying.jpg"));
+                    } else {
+                        originalLabel.setIcon(new ImageIcon(path));
+                    }
                     image = GreyScaleUtil.get2DImageArray(GreyScaleUtil.readImage(originalImagePath));
                     h = image.length;
                     w = image[0].length;
@@ -195,7 +201,7 @@ public class CS555 {
                 scaler.setPath(originalImagePath);
                 int[][] newImg = scaler.scaleImage(w, h, alg, bit);
                 image = newImg;
-                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_scaled.jpg");
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_scaled.jpg", "jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_scaled.jpg"));
                 processedLabel.setIcon(icon);
 
@@ -227,7 +233,7 @@ public class CS555 {
                 HistogramEqualization histogramEqualization = new HistogramEqualization();
                 histogramEqualization.setPath(originalImagePath);
                 int[][] newImg = histogramEqualization.localEqualization(maskSize);
-                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_local_equalized.jpg");
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_local_equalized.jpg", "jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_local_equalized.jpg"));
                 processedLabel.setIcon(icon);
             }
@@ -244,7 +250,7 @@ public class CS555 {
                 histogramEqualization.setPath(originalImagePath);
                 int[][] newImg = histogramEqualization.globalEqualization();
                 image = newImg;
-                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_global_equalized.jpg");
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_global_equalized.jpg", "jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_global_equalized.jpg"));
                 processedLabel.setIcon(icon);
             }
@@ -280,6 +286,7 @@ public class CS555 {
                 filter = (String)filterBox.getSelectedItem();
                 maskSize = Integer.valueOf(textFieldMask.getText());
                 HBCoeff = Double.valueOf(textFieldHBCoeff.getText());
+                alphaCoeff = Double.valueOf(textFieldHBCoeff.getText());
 
                 int[][] newImg = null;
                 Filtering filtering = new Filtering();
@@ -315,12 +322,15 @@ public class CS555 {
                     case "Min":
                         newImg = filtering.min(maskSize);
                         break;
+                    case "Midpoint":
+                        newImg = filtering.midpoint(maskSize);
+                        break;
                     case "Alpha-trimmed Mean":
-                        newImg = filtering.alphaTrimmedMean(maskSize, 0);
+                        newImg = filtering.alphaTrimmedMean(maskSize, alphaCoeff);
                         break;
                 }
                 image = newImg;
-                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg");
+                GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_filtered.jpg", "jpg");
                 ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_filtered.jpg"));
                 processedLabel.setIcon(icon);
             }
@@ -338,6 +348,17 @@ public class CS555 {
         textFieldHBCoeff.setColumns(10);
         textFieldHBCoeff.setBounds(365, 369, 31, 28);
         optionsPanel.add(textFieldHBCoeff);
+
+        JLabel lblD = new JLabel("D (Alpha)");
+        lblD.setBounds(256, 400, 94, 14);
+        optionsPanel.add(lblD);
+
+        textFieldAlphaCoeff = new JTextField();
+        textFieldAlphaCoeff.setText("10");
+        textFieldAlphaCoeff.setColumns(10);
+        textFieldAlphaCoeff.setBounds(365, 400, 31, 28);
+        optionsPanel.add(textFieldAlphaCoeff);
+
 
         JLabel lblBitPlanes = new JLabel("Bit planes");
         lblBitPlanes.setBounds(57, 455, 75, 14);
@@ -367,7 +388,7 @@ public class CS555 {
         public void actionPerformed(ActionEvent arg0) {
             plane[bit] = !plane[bit];
             int[][] newImg = getImageUnderBitPlane();
-            GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_bitPlane.jpg");
+            GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(newImg), generatePath + "_bitPlane.jpg", "jpg");
             ImageIcon icon = new ImageIcon(GreyScaleUtil.readImage(generatePath + "_bitPlane.jpg"));
             processedLabel.setIcon(icon);
         }

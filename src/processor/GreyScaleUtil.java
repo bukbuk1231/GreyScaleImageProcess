@@ -32,7 +32,7 @@ public class GreyScaleUtil {
         return img;
     }
 
-    public static void writeImage(BufferedImage image, String filePath) {
+    public static void writeImage(BufferedImage image, String filePath, String format) {
         try {
             File output = new File(filePath);
             ImageIO.write(image, "jpg", output);

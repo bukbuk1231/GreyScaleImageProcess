@@ -131,7 +131,7 @@ public class Filtering {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
-                double prod = 0;
+                double prod = 1.0;
                 for (int m = 0; m < maskSize; m++) {
                     for (int n = 0; n < maskSize; n++)
                         prod *= maskRegion[m][n];
@@ -240,7 +240,7 @@ public class Filtering {
         return newImg;
     }
 
-    public int[][] alphaTrimmedMean(int maskSize, int d) {
+    public int[][] alphaTrimmedMean(int maskSize, double d) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
@@ -252,7 +252,7 @@ public class Filtering {
                     for (int n = 0; n < maskSize; n++)
                         sum += maskRegion[m][n];
                 }
-                newImg[i][j] = sum / (maskSize * maskSize - d);
+                newImg[i][j] = (int)(sum / (maskSize * maskSize - d));
             }
         }
         return newImg;
