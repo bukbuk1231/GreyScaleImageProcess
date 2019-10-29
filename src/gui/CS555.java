@@ -27,10 +27,10 @@ import javax.swing.JCheckBox;
 public class CS555 {
     private JFrame frame;
     private String originalImagePath, generatePath;
-    private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask, textFieldAlphaCoeff;
+    private JTextField textFieldX, textFieldY, textFieldHBCoeff, textFieldMask, textFieldAlphaCoeff, textFieldContraHarmonicCoeff;
     private int w, h;
     private int maskSize;
-    private double HBCoeff, alphaCoeff;
+    private double HBCoeff, alphaCoeff, contraHarmonicCoeff;
     private String algorithm, filter;
     private int bit;
     private ImageScaling scaler;
@@ -59,7 +59,8 @@ public class CS555 {
         originalImagePath = generatePath = null;
         w = h = 512;
         HBCoeff = 3.0;
-        alphaCoeff = 10.0;
+        alphaCoeff = 5.0;
+        contraHarmonicCoeff = 2.0;
         maskSize = 3;
         algorithm = "Nearest Neigbor";
         filter = "Smoothing";
@@ -286,7 +287,8 @@ public class CS555 {
                 filter = (String)filterBox.getSelectedItem();
                 maskSize = Integer.valueOf(textFieldMask.getText());
                 HBCoeff = Double.valueOf(textFieldHBCoeff.getText());
-                alphaCoeff = Double.valueOf(textFieldHBCoeff.getText());
+                alphaCoeff = Double.valueOf(textFieldAlphaCoeff.getText());
+                contraHarmonicCoeff = Double.valueOf(textFieldContraHarmonicCoeff.getText());
 
                 int[][] newImg = null;
                 Filtering filtering = new Filtering();
@@ -314,7 +316,7 @@ public class CS555 {
                         newImg = filtering.harmonicMean(maskSize);
                         break;
                     case "Contraharmonic Mean":
-                        newImg = filtering.contraHarmonicMean(maskSize);
+                        newImg = filtering.contraHarmonicMean(maskSize, contraHarmonicCoeff);
                         break;
                     case "Max":
                         newImg = filtering.max(maskSize);
@@ -336,7 +338,7 @@ public class CS555 {
             }
         });
         btnSpatialFiltering.setBackground(Color.GREEN);
-        btnSpatialFiltering.setBounds(143, 414, 144, 33);
+        btnSpatialFiltering.setBounds(100, 414, 144, 33);
         optionsPanel.add(btnSpatialFiltering);
 
         JLabel lblA = new JLabel("A (HBoost)");
@@ -354,11 +356,20 @@ public class CS555 {
         optionsPanel.add(lblD);
 
         textFieldAlphaCoeff = new JTextField();
-        textFieldAlphaCoeff.setText("10");
+        textFieldAlphaCoeff.setText("5");
         textFieldAlphaCoeff.setColumns(10);
         textFieldAlphaCoeff.setBounds(365, 400, 31, 28);
         optionsPanel.add(textFieldAlphaCoeff);
 
+        JLabel lblQ = new JLabel("Q (ContraH)");
+        lblQ.setBounds(256, 435, 94, 14);
+        optionsPanel.add(lblQ);
+
+        textFieldContraHarmonicCoeff = new JTextField();
+        textFieldContraHarmonicCoeff.setText("2");
+        textFieldContraHarmonicCoeff.setColumns(10);
+        textFieldContraHarmonicCoeff.setBounds(365, 430, 31, 28);
+        optionsPanel.add(textFieldContraHarmonicCoeff);
 
         JLabel lblBitPlanes = new JLabel("Bit planes");
         lblBitPlanes.setBounds(57, 455, 75, 14);

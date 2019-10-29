@@ -164,21 +164,21 @@ public class Filtering {
         return newImg;
     }
 
-    public int[][] contraHarmonicMean(int maskSize) {
+    public int[][] contraHarmonicMean(int maskSize, double Q) {
         int h = image.length, w = image[0].length;
         int[][] newImg = new int[h][w];
 
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
-                double sum = 0, sqrSum = 0;
+                double sum = 0, expSum = 0;
                 for (int m = 0; m < maskSize; m++) {
                     for (int n = 0; n < maskSize; n++) {
-                        sum += maskRegion[m][n];
-                        sqrSum += maskRegion[m][n] * maskRegion[m][n];
+                        sum += Math.pow(maskRegion[m][n], Q);
+                        expSum += Math.pow(maskRegion[m][n], Q + 1);
                     }
                 }
-                newImg[i][j] = (int)(sqrSum / sum);
+                newImg[i][j] = (int)(expSum / sum);
             }
         }
         return newImg;
@@ -247,14 +247,20 @@ public class Filtering {
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 int[][] maskRegion = GreyScaleUtil.createMaskRegion(image, i, j, maskSize);
-                int sum = 0;
+                int sum = 0, index = 0;
+                int[] flatten = new int[maskSize * maskSize];
                 for (int m = 0; m < maskSize; m++) {
-                    for (int n = 0; n < maskSize; n++)
-                        sum += maskRegion[m][n];
+                    for (int n = 0; n < maskSize; n++) {
+                        flatten[index++] = maskRegion[m][n];
+                    }
                 }
-                newImg[i][j] = (int)(sum / (maskSize * maskSize - d));
+                Arrays.sort(flatten);
+                for (int m = (int)d - (int)(d / 2); m < flatten.length - (int)(d / 2); m++)
+                    sum += flatten[m];
+
+                newImg[i][j] = (int)(1.0 / ((maskSize * maskSize) - d) * sum);
             }
         }
         return newImg;
-    }  // add user defined field D
+    }
 }
