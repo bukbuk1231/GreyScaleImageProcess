@@ -179,6 +179,8 @@ public class Filtering {
                     }
                 }
                 newImg[i][j] = (int)(expSum / sum);
+                if (newImg[i][j] > 255)
+                    newImg[i][j] = 255;
             }
         }
         return newImg;
