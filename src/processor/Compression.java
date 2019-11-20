@@ -1,5 +1,7 @@
 package processor;
 
+import java.util.*;
+
 public class Compression {
 
     private int[][] image;
@@ -71,5 +73,62 @@ public class Compression {
         }
         System.out.println("Size: " + size + " bytes");
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+    }
+
+    public void huffman() {
+        int[] freq = new int[256];
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                freq[image[i][j]]++;
+            }
+        }
+        StringBuilder[] codes = new StringBuilder[256];
+        PriorityQueue<Cell> heap = new PriorityQueue<>((a, b) -> {
+            if (a.prob == b.prob)
+                return 0;
+            return a.prob < b.prob ? -1 : 1;
+        });
+        for (int i = 0; i < 256; i++) {
+            codes[i] = new StringBuilder();
+            if (freq[i] > 0)
+                heap.offer(new Cell(new HashSet<>(Arrays.asList(i)), freq[i] * 1.0 / (h * w)));
+        }
+
+        long start = System.nanoTime();
+        while (heap.size() >= 2) {
+            Cell top1 = heap.poll();
+            Cell top2 = heap.poll();
+            for (int original : top1.set) {
+                codes[original].append('0');
+            }
+            for (int original : top2.set) {
+                codes[original].append('1');
+            }
+            Cell newCell = new Cell(new HashSet<>(), top1.prob + top2.prob);
+            newCell.set.addAll(top1.set);
+            newCell.set.addAll(top2.set);
+            heap.offer(newCell);
+        }
+        long end = System.nanoTime();
+
+        int size = 0;
+        System.out.println("Encoded Image: ");
+        for (int i = 0; i < h; i++) {
+            for (int j = 0; j < w; j++) {
+                size += codes[image[i][j]].length();
+                System.out.print(codes[image[i][j]]);
+            }
+        }
+        System.out.println("\nSize: " + (size / 8) + " bytes");
+        System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+    }
+
+    class Cell {
+        Set<Integer> set;
+        double prob;
+        Cell(Set<Integer> set, double prob) {
+            this.set = set;
+            this.prob = prob;
+        }
     }
 }
