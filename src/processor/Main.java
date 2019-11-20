@@ -5,7 +5,8 @@ import java.awt.image.BufferedImage;
 public class Main {
 
     public static void main(String[] args) {
-        double x = 1.0 / 0.0;
-        System.out.println((int)x);
+        Compression cmp = new Compression("C:\\Users\\louda\\Pictures\\Saved Pictures\\lena.jpg");
+        // cmp.rlePixel();
+        cmp.rleBitplane();
     }
 }

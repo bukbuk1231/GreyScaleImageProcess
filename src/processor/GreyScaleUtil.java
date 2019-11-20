@@ -74,4 +74,11 @@ public class GreyScaleUtil {
         }
         return maskRegion;
     }
+
+    public static int[] flatten(int[][] image) {
+        int[] flattened = new int[image.length * image[0].length];
+        for (int i = 0; i < flattened.length; i++)
+            flattened[i] = image[i / image[0].length][i % image[0].length];
+        return flattened;
+    }
 }
