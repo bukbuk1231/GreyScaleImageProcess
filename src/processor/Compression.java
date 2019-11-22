@@ -13,7 +13,7 @@ public class Compression {
         w = image[0].length;
     }
 
-    public void rlePixel() {
+    public String rlePixel() {
         StringBuilder res = new StringBuilder();
         int[] img = GreyScaleUtil.flatten(image);
         int s = 0, f = 0, len = 0;
@@ -42,9 +42,10 @@ public class Compression {
         System.out.println("Size: " + len + " bytes");
         System.out.println("Compression Ratio: " + len + " to " + (h * w) + " = " + (len * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+        return res.toString();
     }
 
-    public void rleBitplane() {
+    public String[] rleBitplane() {
         StringBuilder[] res = new StringBuilder[8];
         int[] img = GreyScaleUtil.flatten(image);
         long start = System.nanoTime();
@@ -75,6 +76,11 @@ public class Compression {
         System.out.println("Size: " + size + " bytes");
         System.out.println("Compression Ratio: " + size + " to " + (h * w) + " = " + (size * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+
+        String[] planes = new String[8];
+        for (int i = 0; i < 8; i++)
+            planes[i] = res[i].toString();
+        return planes;
     }
 
     public void huffman() {
@@ -161,6 +167,41 @@ public class Compression {
         System.out.println("\nSize: " + (encoded.length() / 8) + " bytes");
         System.out.println("Compression Ratio: " + (encoded.length() / 8) + " to " + (h * w) + " = " + ((encoded.length() / 8) * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+    }
+
+    // we need to store dimension information in encoded string, but for simplicity, I assume I know the dimension
+    // There is some Java internal issues dealing with converting between Byte String and byte[]
+    public int[][] rlePixelDecode(String code) {
+        int[] flatten = new int[h * w];
+        int index = 0;
+        byte[] bcode = code.getBytes();
+        for (int i = 0; i < bcode.length; i += 5) {
+            int cnt = 0;
+            for (int j = 0; j < 4; j++) {
+                cnt |= (bcode[i + j] << (j << 3));
+            }
+            for (int j = 0; j < cnt; j++) {
+                flatten[index++] = bcode[i + 4];
+            }
+        }
+        return GreyScaleUtil.unflatten(flatten, h, w);
+    }
+
+    public int[][] rleBitplaneDecode(String[] code) {
+        int[] flatten = new int[h * w];
+
+        for (int i = 0; i < 8; i++) {
+            int index = 0;
+            String[] split = code[i].split("\\s+");
+            int bit = Integer.valueOf(split[0]);
+            for (int j = 1; j < split.length; j++) {
+                for (int k = 0; k < Integer.valueOf(split[j]); k++) {
+                    flatten[index++] |= bit << i;
+                }
+                bit = 1 - bit;
+            }
+        }
+        return GreyScaleUtil.unflatten(flatten, h, w);
     }
 
     class Cell {

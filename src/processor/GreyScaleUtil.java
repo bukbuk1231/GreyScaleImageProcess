@@ -81,4 +81,12 @@ public class GreyScaleUtil {
             flattened[i] = image[i / image[0].length][i % image[0].length];
         return flattened;
     }
+
+    public static int[][] unflatten(int[] flattened, int h, int w) {
+        int[][] img = new int[h][w];
+        for (int i = 0; i < flattened.length; i++) {
+            img[i / w][i % w] = flattened[i];
+        }
+        return img;
+    }
 }

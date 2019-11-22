@@ -12,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processor/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Compression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -127,7 +128,7 @@
       <workItem from="1574218303306" duration="5038000" />
       <workItem from="1574278403091" duration="4566000" />
       <workItem from="1574451967589" duration="2370000" />
-      <workItem from="1574456165088" duration="2037000" />
+      <workItem from="1574456165088" duration="4415000" />
     </task>
     <servers />
   </component>
