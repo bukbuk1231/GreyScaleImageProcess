@@ -26,7 +26,7 @@ public class Compression {
                 f++;
             }
             byte[] bytes = new byte[4];
-            for (int i = 0; i < 32; i++)
+            for (int i = 0; i < 32; i += 8)
                 bytes[i >> 3] |= (byte) (cnt >> i);
             res.append(new String(bytes));
 
@@ -40,6 +40,7 @@ public class Compression {
         System.out.print("Encoded Byte String: ");
         System.out.println(res);
         System.out.println("Size: " + len + " bytes");
+        System.out.println("Compression Ratio: " + len + " to " + (h * w) + " = " + (len * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
     }
 
@@ -72,6 +73,7 @@ public class Compression {
             size += res[i].length() * 2;
         }
         System.out.println("Size: " + size + " bytes");
+        System.out.println("Compression Ratio: " + size + " to " + (h * w) + " = " + (size * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
     }
 
@@ -120,6 +122,44 @@ public class Compression {
             }
         }
         System.out.println("\nSize: " + (size / 8) + " bytes");
+        System.out.println("Compression Ratio: " + (size / 8) + " to " + (h * w) + " = " + ((size / 8) * 1.0 / (h * w)));
+        System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+    }
+
+    public void lzw() {
+        int[] img = GreyScaleUtil.flatten(image);
+        int s = 0, f = 0, compCode = 256;
+        StringBuilder encoded = new StringBuilder();
+        Map<String, Integer> map = new HashMap<>();
+
+        long start = System.nanoTime();
+        while (f < img.length) {
+            if (f + 1 >= img.length) {
+                System.out.print(img[s]);
+                break;
+            }
+
+            StringBuilder tmp = new StringBuilder(img[s]).append(img[++f]);
+            String out = String.valueOf(img[s]), cur = tmp.toString();
+            while (map.containsKey(cur)) {
+                out = cur;
+                if (f + 1 >= img.length) {
+                    break;
+                } else {
+                    tmp.append(img[++f]);
+                    cur = tmp.toString();
+                }
+            }
+            map.put(cur, compCode++);
+            encoded.append(out);
+            s = f;
+        }
+        long end = System.nanoTime();
+
+        System.out.println("Encoded Image: ");
+        System.out.println(encoded);
+        System.out.println("\nSize: " + (encoded.length() / 8) + " bytes");
+        System.out.println("Compression Ratio: " + (encoded.length() / 8) + " to " + (h * w) + " = " + ((encoded.length() / 8) * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
     }
 
