@@ -1,5 +1,7 @@
 package processor;
 
+import utils.GreyScaleUtil;
+
 public class ImageScaling {
 
     private String path;

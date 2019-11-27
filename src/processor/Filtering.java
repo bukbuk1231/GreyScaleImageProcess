@@ -1,5 +1,7 @@
 package processor;
 
+import utils.GreyScaleUtil;
+
 import java.util.Arrays;
 
 public class Filtering {

@@ -7,13 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee5ea85e-b900-4ea7-9f17-64f5261e7a9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/Cell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/HuffmanCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression$Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression$Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/CS555.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CS555.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processor/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Compression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/Filtering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Filtering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GreyScaleUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/HistogramEqualization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/HistogramEqualization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/ImageScaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/ImageScaling.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +33,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="262" />
-    <option name="y" value="145" />
-    <option name="width" value="1986" />
-    <option name="height" value="1122" />
   </component>
   <component name="ProjectId" id="1SXSGPSRyQPcZcB6Vp7ms4X7tEB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -128,7 +124,9 @@
       <workItem from="1574218303306" duration="5038000" />
       <workItem from="1574278403091" duration="4566000" />
       <workItem from="1574451967589" duration="2370000" />
-      <workItem from="1574456165088" duration="4415000" />
+      <workItem from="1574456165088" duration="6068000" />
+      <workItem from="1574556777476" duration="22000" />
+      <workItem from="1574819590482" duration="522000" />
     </task>
     <servers />
   </component>

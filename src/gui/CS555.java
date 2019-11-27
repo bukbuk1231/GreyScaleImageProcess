@@ -1,6 +1,7 @@
 package gui;
 
 import processor.*;
+import utils.GreyScaleUtil;
 
 import java.awt.EventQueue;
 

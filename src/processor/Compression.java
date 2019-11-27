@@ -1,5 +1,9 @@
 package processor;
 
+import utils.Cell;
+import utils.GreyScaleUtil;
+import utils.HuffmanCode;
+
 import java.util.*;
 
 public class Compression {
@@ -83,7 +87,7 @@ public class Compression {
         return planes;
     }
 
-    public void huffman() {
+    public HuffmanCode huffman() {
         int[] freq = new int[256];
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
@@ -120,16 +124,26 @@ public class Compression {
         long end = System.nanoTime();
 
         int size = 0;
+        StringBuilder out = new StringBuilder();
         System.out.println("Encoded Image: ");
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) {
                 size += codes[image[i][j]].length();
+                out.append(codes[image[i][j]]);
                 System.out.print(codes[image[i][j]]);
             }
         }
+        Map<Integer, String> table = new HashMap<>();
+        for (int i = 0; i < 256; i++) {
+            if (codes[i].length() > 0)
+                table.put(i, codes[i].toString());
+        }
+
         System.out.println("\nSize: " + (size / 8) + " bytes");
         System.out.println("Compression Ratio: " + (size / 8) + " to " + (h * w) + " = " + ((size / 8) * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+
+        return new HuffmanCode(out.toString(), table);
     }
 
     public void lzw() {
@@ -204,12 +218,7 @@ public class Compression {
         return GreyScaleUtil.unflatten(flatten, h, w);
     }
 
-    class Cell {
-        Set<Integer> set;
-        double prob;
-        Cell(Set<Integer> set, double prob) {
-            this.set = set;
-            this.prob = prob;
-        }
+    public int[][] huffmanDecode(HuffmanCode huffmanCode) {
+        return null;
     }
 }
