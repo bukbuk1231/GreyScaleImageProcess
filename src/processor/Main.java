@@ -16,13 +16,12 @@ public class Main {
 
 //        String[] y = cmp.rleBitplane();
 //        int[][] img = cmp.rleBitplaneDecode(y);
-//        GreyScaleUtil.print2DImageArray(img);
 //        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_bitplane_decode.jpg", "jpg");
 
-        HuffmanCode hc = cmp.huffman();
-        int[][] img = cmp.huffmanDecode(hc);
-        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_bitplane_decode.jpg", "jpg");
+//        HuffmanCode hc = cmp.huffman();
+//        int[][] img = cmp.huffmanDecode(hc);
+//        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_bitplane_decode.jpg", "jpg");
 
-        // cmp.lzw();
+         cmp.lzw();
     }
 }

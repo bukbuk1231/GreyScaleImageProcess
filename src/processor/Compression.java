@@ -1,9 +1,6 @@
 package processor;
 
-import utils.Cell;
-import utils.GreyScaleUtil;
-import utils.HuffmanCode;
-import utils.Tree;
+import utils.*;
 
 import java.util.*;
 
@@ -149,15 +146,17 @@ public class Compression {
         return new HuffmanCode(out.toString(), table);
     }
 
-    public void lzw() {
+    public LZWCode lzw() {
         int[] img = GreyScaleUtil.flatten(image);
         int s = 0, f = 0, compCode = 256;
         StringBuilder encoded = new StringBuilder();
         Map<String, Integer> map = new HashMap<>();
+        Map<Integer, List<Integer>> decode = new HashMap<>();
 
         long start = System.nanoTime();
         while (f < img.length) {
             if (f + 1 >= img.length) {
+                encoded.append(img[s]).append(' ');
                 System.out.print(img[s]);
                 break;
             }
@@ -173,8 +172,16 @@ public class Compression {
                     cur = tmp.toString();
                 }
             }
-            map.put(cur, compCode++);
-            encoded.append(out);
+            map.put(cur, compCode);
+            decode.put(compCode, new ArrayList<>());
+            for (int i = s; i <= f; i++) {
+                decode.get(compCode).add(img[i]);
+            }
+            compCode++;
+            if (s == f - 1)
+                encoded.append(out).append(' ');
+            else
+                encoded.append(map.get(out)).append(' ');
             s = f;
         }
         long end = System.nanoTime();
@@ -184,6 +191,8 @@ public class Compression {
         System.out.println("\nSize: " + (encoded.length() / 8) + " bytes");
         System.out.println("Compression Ratio: " + (encoded.length() / 8) + " to " + (h * w) + " = " + ((encoded.length() / 8) * 1.0 / (h * w)));
         System.out.println("Encode time: " + ((end - start) / 1e9) + " seconds");
+
+        return new LZWCode(encoded.toString(), decode);
     }
 
     // we need to store dimension information in encoded string, but for simplicity, I assume I know the dimension
