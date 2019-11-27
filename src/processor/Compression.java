@@ -163,21 +163,25 @@ public class Compression {
 
             StringBuilder tmp = new StringBuilder(img[s]).append(img[++f]);
             String out = String.valueOf(img[s]), cur = tmp.toString();
+            boolean valid = true;
             while (map.containsKey(cur)) {
                 out = cur;
                 if (f + 1 >= img.length) {
+                    valid = false;
                     break;
                 } else {
                     tmp.append(img[++f]);
                     cur = tmp.toString();
                 }
             }
-            map.put(cur, compCode);
-            decode.put(compCode, new ArrayList<>());
-            for (int i = s; i <= f; i++) {
-                decode.get(compCode).add(img[i]);
+            if (valid) {
+                map.put(cur, compCode);
+                decode.put(compCode, new ArrayList<>());
+                for (int i = s; i <= f; i++) {
+                    decode.get(compCode).add(img[i]);
+                }
+                compCode++;
             }
-            compCode++;
             if (s == f - 1)
                 encoded.append(out).append(' ');
             else
@@ -251,6 +255,30 @@ public class Compression {
             Integer decode = table.search(c);
             if (decode != null) {
                 img[index++] = decode;
+            }
+        }
+        long end = System.nanoTime();
+
+        System.out.println("Decode time: " + ((end - start) / 1e9) + " seconds");
+        return GreyScaleUtil.unflatten(img, h, w);
+    }
+
+    public int[][] LZWDecode(LZWCode lzwCode) {
+        String[] codes = lzwCode.code.split("\\s+");
+        Map<Integer, List<Integer>> table = lzwCode.table;
+        int[] img = new int[h * w];
+        int index = 0;
+
+        long start = System.nanoTime();
+        for (int i = 0; i < codes.length - 1; i++) {
+            int code = Integer.valueOf(codes[i]);
+            if (code >= 0 && code <= 255) {
+                img[index++] = code;
+            } else {
+                List<Integer> comp = table.get(code);
+                for (int pixel : comp) {
+                    img[index++] = pixel;
+                }
             }
         }
         long end = System.nanoTime();

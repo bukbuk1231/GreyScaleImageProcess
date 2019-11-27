@@ -2,6 +2,7 @@ package processor;
 
 import utils.GreyScaleUtil;
 import utils.HuffmanCode;
+import utils.LZWCode;
 
 import java.awt.image.BufferedImage;
 
@@ -20,8 +21,10 @@ public class Main {
 
 //        HuffmanCode hc = cmp.huffman();
 //        int[][] img = cmp.huffmanDecode(hc);
-//        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_bitplane_decode.jpg", "jpg");
+//        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_huffman_decode.jpg", "jpg");
 
-         cmp.lzw();
+         LZWCode lzw = cmp.lzw();
+         int[][] img = cmp.LZWDecode(lzw);
+         GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_lzw_decode.jpg", "jpg");
     }
 }
