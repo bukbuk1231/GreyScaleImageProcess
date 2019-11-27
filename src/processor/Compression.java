@@ -3,6 +3,7 @@ package processor;
 import utils.Cell;
 import utils.GreyScaleUtil;
 import utils.HuffmanCode;
+import utils.Tree;
 
 import java.util.*;
 
@@ -97,13 +98,15 @@ public class Compression {
         StringBuilder[] codes = new StringBuilder[256];
         PriorityQueue<Cell> heap = new PriorityQueue<>((a, b) -> {
             if (a.prob == b.prob)
-                return 0;
+                return -1;
             return a.prob < b.prob ? -1 : 1;
         });
         for (int i = 0; i < 256; i++) {
             codes[i] = new StringBuilder();
-            if (freq[i] > 0)
+            if (freq[i] > 0) {
                 heap.offer(new Cell(new HashSet<>(Arrays.asList(i)), freq[i] * 1.0 / (h * w)));
+                // heap.offer(new Cell(new HashSet<>(Arrays.asList(i)), freq[i] * 1.0));
+            }
         }
 
         long start = System.nanoTime();
@@ -133,10 +136,10 @@ public class Compression {
                 System.out.print(codes[image[i][j]]);
             }
         }
-        Map<Integer, String> table = new HashMap<>();
+        Tree table = new Tree();
         for (int i = 0; i < 256; i++) {
-            if (codes[i].length() > 0)
-                table.put(i, codes[i].toString());
+            if (freq[i] > 0)
+                table.insert(i, codes[i]);
         }
 
         System.out.println("\nSize: " + (size / 8) + " bytes");
@@ -189,6 +192,8 @@ public class Compression {
         int[] flatten = new int[h * w];
         int index = 0;
         byte[] bcode = code.getBytes();
+
+        long start = System.nanoTime();
         for (int i = 0; i < bcode.length; i += 5) {
             int cnt = 0;
             for (int j = 0; j < 4; j++) {
@@ -198,12 +203,16 @@ public class Compression {
                 flatten[index++] = bcode[i + 4];
             }
         }
+        long end = System.nanoTime();
+
+        System.out.println("Decode time: " + ((end - start) / 1e9) + " seconds");
         return GreyScaleUtil.unflatten(flatten, h, w);
     }
 
     public int[][] rleBitplaneDecode(String[] code) {
         int[] flatten = new int[h * w];
 
+        long start = System.nanoTime();
         for (int i = 0; i < 8; i++) {
             int index = 0;
             String[] split = code[i].split("\\s+");
@@ -215,10 +224,29 @@ public class Compression {
                 bit = 1 - bit;
             }
         }
+        long end = System.nanoTime();
+
+        System.out.println("Decode time: " + ((end - start) / 1e9) + " seconds");
         return GreyScaleUtil.unflatten(flatten, h, w);
     }
 
     public int[][] huffmanDecode(HuffmanCode huffmanCode) {
-        return null;
+        String code = huffmanCode.code;
+        Tree table = huffmanCode.table;
+        int[] img = new int[h * w];
+        int index = 0;
+
+        long start = System.nanoTime();
+        for (int i = 0; i < code.length(); i++) {
+            char c = code.charAt(i);
+            Integer decode = table.search(c);
+            if (decode != null) {
+                img[index++] = decode;
+            }
+        }
+        long end = System.nanoTime();
+
+        System.out.println("Decode time: " + ((end - start) / 1e9) + " seconds");
+        return GreyScaleUtil.unflatten(img, h, w);
     }
 }

@@ -1,5 +1,8 @@
 package processor;
 
+import utils.GreyScaleUtil;
+import utils.HuffmanCode;
+
 import java.awt.image.BufferedImage;
 
 public class Main {
@@ -14,9 +17,11 @@ public class Main {
 //        String[] y = cmp.rleBitplane();
 //        int[][] img = cmp.rleBitplaneDecode(y);
 //        GreyScaleUtil.print2DImageArray(img);
+//        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_bitplane_decode.jpg", "jpg");
 
-        // cmp.huffman();
-
+        HuffmanCode hc = cmp.huffman();
+        int[][] img = cmp.huffmanDecode(hc);
+        GreyScaleUtil.writeImage(GreyScaleUtil.generateImage(img), "C:\\Users\\louda\\Pictures\\Saved Pictures\\lena_bitplane_decode.jpg", "jpg");
 
         // cmp.lzw();
     }

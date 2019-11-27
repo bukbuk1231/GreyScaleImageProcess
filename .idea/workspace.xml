@@ -7,15 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee5ea85e-b900-4ea7-9f17-64f5261e7a9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/HuffmanCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Tree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CS555.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CS555.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$BitPlaneActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555$BitPlaneActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/gui/CS555.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression$Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Compression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Filtering.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Filtering.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/GreyScaleUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/HistogramEqualization.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/HistogramEqualization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/ImageScaling$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/ImageScaling$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/ImageScaling.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/ImageScaling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ImageProcessing/processor/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/processor/Compression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Compression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/Filtering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Filtering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/GreyScaleUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GreyScaleUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/HistogramEqualization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/HistogramEqualization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processor/ImageScaling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/ImageScaling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/processor/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/processor/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/HuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HuffmanCode.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +138,7 @@
       <workItem from="1574451967589" duration="2370000" />
       <workItem from="1574456165088" duration="6068000" />
       <workItem from="1574556777476" duration="22000" />
-      <workItem from="1574819590482" duration="522000" />
+      <workItem from="1574819590482" duration="5729000" />
     </task>
     <servers />
   </component>
